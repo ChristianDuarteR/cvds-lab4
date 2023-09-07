@@ -1,9 +1,9 @@
 package hangman.model;
 
-public class BonusScore implements GameScore {
+public class PowerBonusScore implements GameScore {
     /**
      * @pre Inicia con 0 puntos, puntaje mínimo 0
-     * @pos Se bonifica con 10 puntos cada letra correcta, se penaliza con 5 puntos cada letra incorrecta
+     * @pos Se bonifica con 5^i puntos cada letra correcta, se penaliza con 8 puntos por letra incorrecta
      * @param CorrectCount número de letras correctas
      * @param IncorrectCount número de letras incorrectas
      * @return Puntaje calculado
@@ -16,10 +16,12 @@ public class BonusScore implements GameScore {
         int score = 0;
 
         // Bonificación por letras correctas
-        score += 10 * CorrectCount;
+        for (int i = 0; i < CorrectCount; i++) {
+            score += Math.pow(5, i);
+        }
 
         // Penalización por letras incorrectas
-        score -= 5 * IncorrectCount;
+        score -= 8 * IncorrectCount;
 
         // Limitar el puntaje mínimo a 0
         if (score < 0) {
