@@ -35,7 +35,7 @@ public class GameModel {
     
     
    
-    public GameModel(HangmanDictionary dictionary){
+    public GameModel(HangmanDictionary dictionary) throws GameScoreException {
         //this.dictionary = new EnglishDictionaryDataSource();
         this.dictionary=dictionary;
         randomWord = selectRandomWord();
@@ -49,7 +49,7 @@ public class GameModel {
     
     //method: reset
     //purpose: reset this game model for a new game
-    public void reset(){
+    public void reset() throws GameScoreException {
         randomWord = selectRandomWord();
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;

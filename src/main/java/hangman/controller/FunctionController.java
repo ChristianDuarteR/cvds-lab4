@@ -19,6 +19,7 @@ import java.awt.event.ComponentListener;
 import hangman.GUI;
 import hangman.SwingProject;
 import hangman.model.FunctionModel;
+import hangman.model.GameScoreException;
 import hangman.view.FunctionPanel;
 
 
@@ -71,7 +72,11 @@ public class FunctionController {
             }
         });
         panel.getPlayButton().addActionListener((ActionEvent e) -> {
-            gameControllerReference.resetGame();
+            try {
+                gameControllerReference.resetGame();
+            } catch (GameScoreException ex) {
+                throw new RuntimeException(ex);
+            }
             rootController.changeVisibleCard(GUI.GAME_KEY);
         });
         panel.getHighScoresButton().addActionListener((ActionEvent e) -> {

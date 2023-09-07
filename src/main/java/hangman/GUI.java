@@ -61,7 +61,7 @@ public class GUI {
     //method: setup
     //purpose: Create the various panels (game screens) for our game
     // and attach them to the main frame.
-    private void setup(){
+    private void setup() throws GameScoreException {
         mainFrameController = new MainFrameController(
                 new MainFrameModel(PROJECT_NAME,600,400,null,EXIT_ON_CLOSE),
                 new MainFrame()
@@ -119,7 +119,11 @@ public class GUI {
     //then set the whole thing visible
     private void setupAndStart(){
         javax.swing.SwingUtilities.invokeLater(() -> {
-            setup();
+            try {
+                setup();
+            } catch (GameScoreException e) {
+                throw new RuntimeException(e);
+            }
             mainFrameController.changeVisibleCard(SPLASH_KEY);
             mainFrameController.getFrame().setVisible(true);
         });
