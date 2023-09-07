@@ -4,6 +4,8 @@
 
 ### Desarrollo Dirigido por Pruebas + DIP + DI + Contenedores Livianos
 
+### JOHANN AMAYA - CHRISTIAN DUARTE
+
 
 Para este taller se va a trabajar sobre el juego del ahorcado.
 
