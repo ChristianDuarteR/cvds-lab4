@@ -15,7 +15,17 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>LATEST</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
         </plugins>
+        
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,5 +39,11 @@
             <artifactId>guice</artifactId>
             <version>4.0</version>
         </dependency>
+        <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>LATEST</version>
+        <scope>test</scope>
+    </dependency>
     </dependencies>
 </project>
