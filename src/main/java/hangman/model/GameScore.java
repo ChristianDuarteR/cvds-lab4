@@ -7,7 +7,7 @@ public interface GameScore {
      * @param IncorrectCount numero de letras incorrectas
      * @return score
      */
-    default int CalculateScore(int CorrectCount, int IncorrectCount) throws GameScoreException {
+    default int calculateScore(int correctCount, int incorrectCount) throws GameScoreException {
         return 0;
     }
 }

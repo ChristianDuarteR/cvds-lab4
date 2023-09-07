@@ -8,7 +8,7 @@ public class OriginalScore implements GameScore {
      * @param IncorrectCount número de letras incorrectas
      * @return Puntaje calculado
      */
-    public int CalculateScore(int CorrectCount, int IncorrectCount) throws GameScoreException {
+    public int calculateScore(int correctCount, int incorrectCount) throws GameScoreException {
         if (CorrectCount < 0 || IncorrectCount < 0) {
             throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
         }

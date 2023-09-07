@@ -31,6 +31,7 @@ public class GameModel {
     private Scanner scan;
     private String randomWord;
     private char[] randomWordCharArray;
+    private GameScore gameScore_1;
     
     
    
@@ -41,7 +42,8 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = 100;
+        gameScore_1 = new OriginalScore();
+        gameScore = gameScore_1.calculateScore(correctCount,incorrectCount);
         
     }
     
@@ -52,7 +54,8 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = 100;
+        gameScore_1 = new OriginalScore();
+        gameScore = gameScore_1.calculateScore(correctCount,incorrectCount);
     }
 
     //setDateTime
