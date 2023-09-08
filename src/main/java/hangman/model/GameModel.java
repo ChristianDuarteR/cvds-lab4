@@ -31,7 +31,7 @@ public class GameModel {
     private Scanner scan;
     private String randomWord;
     private char[] randomWordCharArray;
-    private GameScore gameScore_1;
+    private GameScore gameScore_1 = new BonusScore();
     
     
    
@@ -42,7 +42,6 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore_1 = new OriginalScore();
         gameScore = gameScore_1.calculateScore(correctCount,incorrectCount);
         
     }
@@ -54,7 +53,7 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore_1 = new OriginalScore();
+        gameScore_1 = new BonusScore();
         gameScore = gameScore_1.calculateScore(correctCount,incorrectCount);
     }
 
@@ -67,7 +66,7 @@ public class GameModel {
     //method: makeGuess
     //purpose: check if user guess is in string. Return a
     // list of positions if character is found in string
-    public ArrayList<Integer> makeGuess(String guess){
+    public ArrayList<Integer> makeGuess(String guess) throws GameScoreException {
         char guessChar = guess.charAt(0);
         ArrayList<Integer> positions = new ArrayList<>();
         for(int i = 0; i < randomWordCharArray.length; i++){
@@ -77,10 +76,11 @@ public class GameModel {
         }
         if(positions.size() == 0){
             incorrectCount++;
-            gameScore -= 10;
         } else {
             correctCount += positions.size();
         }
+
+        gameScore = gameScore_1.calculateScore(correctCount,incorrectCount);
         return positions;
         
     }

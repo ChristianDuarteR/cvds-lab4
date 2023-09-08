@@ -61,7 +61,12 @@ public class GameController{
         for(JButton jb : panel.getKeyboardButtonArray()){
             jb.addActionListener((ActionEvent e) -> {
                 jb.setEnabled(false);
-                ArrayList<Integer> positions = model.makeGuess(jb.getText());
+                ArrayList<Integer> positions = null;
+                try {
+                    positions = model.makeGuess(jb.getText());
+                } catch (GameScoreException ex) {
+                    throw new RuntimeException(ex);
+                }
                 for(int pos : positions){
                     panel.getBlanksArrayList().get(pos).setLetter(jb.getText());
                     panel.getBlanksArrayList().get(pos).repaint();
