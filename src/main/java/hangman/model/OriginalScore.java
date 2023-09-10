@@ -16,12 +16,10 @@ public class OriginalScore implements GameScore {
         int score = 100;
 
         // Penalización por letras incorrectas
-        score -= 10 * incorrectCount;
-
-        // Limitar el puntaje mínimo a 0
-        if (score < 0) {
-            score = 0;
+        if(incorrectCount > 0 ){
+            score -= incorrectCount * 10;
         }
+        if(score < 0 ){ score = 0;}
 
         return score;
     }

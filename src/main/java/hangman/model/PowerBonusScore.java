@@ -16,8 +16,8 @@ public class PowerBonusScore implements GameScore {
         int score = 0;
 
         // Bonificación por letras correctas
-        for (int i = 0; i < correctCount; i++) {
-            score += Math.pow(5, i);
+        if(correctCount>0) {
+            score += Math.pow(5, correctCount);
         }
 
         // Penalización por letras incorrectas

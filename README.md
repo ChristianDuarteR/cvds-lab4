@@ -32,8 +32,7 @@ puntuación, los cuales se describen a continuación:
     * La $i-ésima$ letra correcta se bonifica con $5^i$.
     * Se penaliza con 8 puntos cada letra incorrecta.
     * El puntaje mínimo es 0
-    * Si con las reglas anteriores sobrepasa 500 puntos, el puntaje es
-      500.
+    * Si con las reglas anteriores sobrepasa 500 puntos, el puntaje es 500.
 
 Lo anterior, se traduce en el siguiente modelo, donde se aplica el
 principio de inversión de dependencias:

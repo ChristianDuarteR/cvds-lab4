@@ -21,9 +21,10 @@ public class BonusScore implements GameScore {
             score += correctCount*10;
         }
 
-        if (incorrectCount == previewIncorrectScore){
-            score--;
+        if (incorrectCount >0){
+            score += incorrectCount*(-5);
         }
+
 
         // Limitar el puntaje mínimo a 0
         if (score < 0) {
@@ -34,8 +35,6 @@ public class BonusScore implements GameScore {
         if (score > 500) {
             score = 500;
         }
-
-        previewIncorrectScore = incorrectCount;
 
         return score;
     }
