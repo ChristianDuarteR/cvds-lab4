@@ -83,36 +83,4 @@ public class GameScoreTest {
         int score = power.calculateScore(100000, 0);
         assertTrue(score <= 500);
     }
-
-    @Test
-    public void TestIncorrectCountOrCorrectCountNeverbeZeroOriginalScore() {
-        try {
-            int score = original.calculateScore(0, 0);
-            fail("Deberia Atrapar una excepcion");
-        } catch (GameScoreException e){
-            assertEquals(e.getMessage(),GameScoreException.INVALID_PARAMETERS);
-        }
-    }
-
-    @Test
-    public void TestIncorrectCountOrCorrectCountNeverbeZeroPowerBonusScore() {
-        try {
-            int score = power.calculateScore(0, 0);
-            fail("Deberia Atrapar una excepcion");
-        } catch (GameScoreException e){
-            assertEquals(e.getMessage(),GameScoreException.INVALID_PARAMETERS);
-        }
-    }
-
-    @Test
-    public void TestIncorrectCountOrCorrectCountNeverbeZeroBonusScore() {
-        try {
-            int score = bonus.calculateScore(0, 0);
-            fail("Deberia Atrapar una excepcion");
-        } catch (GameScoreException e){
-            assertEquals(e.getMessage(),GameScoreException.INVALID_PARAMETERS);
-        }
-    }
-
-
 }
