@@ -11,11 +11,7 @@ public class BonusScore implements GameScore {
      * @return Puntaje calculado
      */
     public int calculateScore(int correctCount, int incorrectCount) throws GameScoreException {
-        if (correctCount < 0 || incorrectCount < 0) {
-            throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
-        }
-
-        if (correctCount == 0 && incorrectCount == 0) {
+        if (correctCount < 0 || incorrectCount < 0 ) {
             throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
         }
 
