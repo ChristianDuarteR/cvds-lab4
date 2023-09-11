@@ -13,12 +13,17 @@ public class OriginalScore implements GameScore {
             throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
         }
 
+        if (correctCount == 0 && incorrectCount == 0) {
+            throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
+        }
+
         int score = 100;
 
         // Penalización por letras incorrectas
         if(incorrectCount > 0 ){
             score -= incorrectCount * 10;
         }
+
         if(score < 0 ){ score = 0;}
 
         return score;

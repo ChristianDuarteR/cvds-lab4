@@ -15,6 +15,10 @@ public class BonusScore implements GameScore {
             throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
         }
 
+        if (correctCount == 0 && incorrectCount == 0) {
+            throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
+        }
+
         int score = 0;
 
         if (correctCount > 0) {

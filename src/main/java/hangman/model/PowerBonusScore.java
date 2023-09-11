@@ -13,6 +13,10 @@ public class PowerBonusScore implements GameScore {
             throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
         }
 
+        if (correctCount == 0 && incorrectCount == 0) {
+            throw new GameScoreException(GameScoreException.INVALID_PARAMETERS);
+        }
+
         int score = 0;
 
         // Bonificación por letras correctas
