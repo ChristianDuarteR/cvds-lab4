@@ -59,5 +59,4 @@ public class SwingProject {
         //createGUIUsingFactoryMethod().play();
         createGUIUsingGuice().play(); // Usar Guice para crear la GUI
     }
-
 }
