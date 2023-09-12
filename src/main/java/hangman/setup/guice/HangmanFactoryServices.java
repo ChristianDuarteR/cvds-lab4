@@ -10,8 +10,7 @@ package hangman.setup.guice;
  * @author 2106913
  */
 
-import hangman.model.French;
-import hangman.model.Language;
+import hangman.model.*;
 import hangman.model.dictionary.HangmanDictionary;
 import hangman.model.dictionary.FrenchDictionaryDataSource;
 import hangman.view.HangmanNoviolentoPanel;
@@ -33,6 +32,13 @@ public class HangmanFactoryServices extends AbstractModule {
 
         // Binding para HangmanPanel, usando HangmanNoviolentoPanel como implementación
         bind(HangmanPanel.class).to(HangmanNoviolentoPanel.class);
+
+        // Enlazar GameScore con OriginalScore para HangmanPanel
+        bind(GameScore.class).to(OriginalScore.class);
+
+        // Enlazar GameScore con PowerBonusScore para HangmanPanel
+                bind(GameScore.class).to(PowerBonusScore.class);
+
     }
 
 }
