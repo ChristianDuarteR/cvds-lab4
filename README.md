@@ -20,20 +20,20 @@ puntuación, los cuales se describen a continuación:
     * No se bonifican las letras correctas.
     * Se penaliza con 10 puntos con cada letra incorrecta.
     * El puntaje minimo es 0.
-
+![img.png](img.png)
 * BonusScore: 
     * El juego inicia en 0 puntos.
     * Se bonifica con 10 puntos cada letra correcta.
     * Se penaliza con 5 puntos cada letra incorrecta.
     * El puntaje mínimo es 0
-    
+![img_2.png](img_2.png)    
 * PowerBonusScore:
     * El juego inicia en 0 puntos.
     * La $i-ésima$ letra correcta se bonifica con $5^i$.
     * Se penaliza con 8 puntos cada letra incorrecta.
     * El puntaje mínimo es 0
     * Si con las reglas anteriores sobrepasa 500 puntos, el puntaje es 500.
-
+![img_1.png](img_1.png)
 Lo anterior, se traduce en el siguiente modelo, donde se aplica el
 principio de inversión de dependencias:
 
