@@ -5,11 +5,6 @@
  */
 package hangman.setup.guice;
 
-/**
- *
- * @author 2106913
- */
-
 import hangman.model.*;
 import hangman.model.dictionary.HangmanDictionary;
 import hangman.model.dictionary.FrenchDictionaryDataSource;
@@ -35,13 +30,6 @@ public class HangmanFactoryServices extends AbstractModule {
 
         // Enlazar GameScore con OriginalScore para HangmanPanel
         bind(GameScore.class).to(OriginalScore.class);
-
-        // Enlazar GameScore con PowerBonusScore
-        //bind(GameScore.class).to(PowerBonusScore.class);
-
-        // Enlazar GameScore con BonusScore
-        //bind(GameScore.class).to(BonusScore.class);
-
     }
 
 }
