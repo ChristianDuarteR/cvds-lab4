@@ -37,7 +37,7 @@ public class HangmanFactoryServices extends AbstractModule {
         bind(GameScore.class).to(OriginalScore.class);
 
         // Enlazar GameScore con PowerBonusScore para HangmanPanel
-                bind(GameScore.class).to(PowerBonusScore.class);
+        //bind(GameScore.class).to(PowerBonusScore.class);
 
     }
 
